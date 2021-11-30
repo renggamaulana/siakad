@@ -3,7 +3,9 @@
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +18,13 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home',
-        'msg' => 'Hallo ini halaman home!'
-    ]);
-});
+// Load The Pages
+Route::get('/', [PagesController::class, 'home']);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/login', [PagesController::class, 'login']);
+Route::get('/students', [PagesController::class, 'students']);
+Route::get('/admission', [PagesController::class, 'admission']);
 
-Route::get('/students', [StudentController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
+// Method
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
