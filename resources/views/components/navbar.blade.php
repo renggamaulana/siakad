@@ -32,7 +32,7 @@
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               {{-- {{ Request::is('login') ? 'active' : '' }} --}}
-                <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+                <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login <i class="bi bi-box-arrow-in-right"></i></a>
               </li>
         </ul>
       </div>

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StudentController;
-
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,9 @@ Route::get('/about', [PagesController::class, 'about']);
 Route::get('/login', [PagesController::class, 'login']);
 Route::get('/students', [PagesController::class, 'students']);
 Route::get('/admission', [PagesController::class, 'admission']);
+Route::get('/register', [PagesController::class, 'register']);
 
 // Method
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/register', [RegisterController::class, 'store']);

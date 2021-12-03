@@ -15,8 +15,14 @@ class PagesController extends Controller
     }
     public function login()
     {
-        return view('pages.login', [
+        return view('pages.auth.login', [
             'title' => 'Login',
+        ]);
+    }
+    public function register()
+    {
+        return view('pages.auth.register', [
+            'title' => 'Register'
         ]);
     }
     public function students()
