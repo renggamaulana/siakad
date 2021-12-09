@@ -44,4 +44,11 @@ class PagesController extends Controller
             'title' => 'Admission',
         ]);
     }
+
+    public function dashboard()
+    {
+        return view('pages.dashboard', [
+            'title' => 'Dashboard',
+        ]);
+    }
 }

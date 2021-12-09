@@ -21,10 +21,11 @@ use App\Http\Controllers\RegisterController;
 // Load The Pages
 Route::get('/', [PagesController::class, 'home']);
 Route::get('/about', [PagesController::class, 'about']);
-Route::get('/login', [PagesController::class, 'login']);
+Route::get('/login', [PagesController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/students', [PagesController::class, 'students']);
 Route::get('/admission', [PagesController::class, 'admission']);
-Route::get('/register', [PagesController::class, 'register']);
+Route::get('/register', [PagesController::class, 'register'])->middleware('guest');
+Route::get('/dashboard', [PagesController::class, 'dashboard'])->middleware('auth');
 
 // Method
 Route::post('/login', [LoginController::class, 'authenticate']);
